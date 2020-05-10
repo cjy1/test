@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
+    <Form class="login-form" ref="formInline" :model="formInline" :rules="ruleInline" inline>
         <FormItem prop="user">
             <Input type="text" v-model="formInline.user" placeholder="Username">
                 <Icon type="ios-person-outline" slot="prepend"></Icon>
@@ -60,7 +60,35 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.login {
+  .login {
+    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589094421339&di=a6c4156c08221b72312ce68ab83b63e1&imgtype=0&src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F11%2F92%2FQms8MVxT7t.jpg") center center / cover no-repeat fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+  .login-form {
+    height: 400px;
+    width: 400px;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    overflow: hidden;
+  }
+  .login-form::before {
+    content: '';
+    background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589094421339&di=a6c4156c08221b72312ce68ab83b63e1&imgtype=0&src=http%3A%2F%2Fpic.616pic.com%2Fbg_w1180%2F00%2F11%2F92%2FQms8MVxT7t.jpg") center center / cover no-repeat fixed;
+    filter: blur(20px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    margin: -30px;
+  }
 
-}
 </style>
